@@ -25,6 +25,10 @@ import javafx.stage.Stage;
 
 public class WebBrowser extends Application 
 {
+  public WebBrowser()
+  {
+  mbar = new MenuBar();
+  }
   public static void main(String[] args) {
 	  launch(args);
   }
@@ -32,6 +36,8 @@ public class WebBrowser extends Application
   @Override
   public void start(Stage primaryStage) {
 	  primaryStage.setTitle("java-buddy.blogspot.com");
+	  BorderPane bp = new BorderPane()
+	  bp.setTop(mbar);
 	
 	  WebView myBrowser = new WebView();
 	  WebEngine myWebEngine = myBrowser.getEngine();
